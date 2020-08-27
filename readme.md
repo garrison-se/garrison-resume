@@ -1,7 +1,7 @@
 # Garrison resume generator
 This experimental eleventy thingie generates print ready resumes from JSON. The template features hacks like wrapping the whole page in a table (for the repeating header and footer).
 
-Ideally, you would want the text to break right at the bottom of the page, but not leaving a single line or word on the next page (orphans). Unfortionately, this is not possible the the current browser support for [break-after](https://developer.mozilla.org/en-US/docs/Web/CSS/break-after) and [orphans](https://developer.mozilla.org/en-US/docs/Web/CSS/orphans). Because of this limitation, the rule is to not break pages in the middle of a list or project section. This means there may be gaps at the bottom of pages if there are long sections at inappropriate places. Hopefully print support in CSS will improve in the future!
+Ideally, you would want the text to break right at the bottom of the page, but not leaving a single line or word on the next page (orphans). Unfortunately, this is not possible the the current browser support for [break-after](https://developer.mozilla.org/en-US/docs/Web/CSS/break-after) and [orphans](https://developer.mozilla.org/en-US/docs/Web/CSS/orphans). Because of this limitation, the rule is to not break pages in the middle of a list or project section. This means there may be gaps at the bottom of pages if there are long sections at inappropriate places. Hopefully print support in CSS will improve in the future!
 
 ## Setup
 Install Node if you haven't already. Clone the repo and install dependencies.
@@ -22,7 +22,7 @@ npm start
 ```
 
 ## Edit your resume
-The resume consists of three files, `resume.json`, `resume.md` and `resume.jpg`. The JSON file is where you edit your data. The markdown file contains metadata and should be left alone (although you could override data with frontmatter). The profile summary needs some basic html formating (paragraphs). If you are not comfortable with html you can override the JSON with markdown in `resume.md`. Replace `resume.jpg` with your photo (high res, cropped square).
+The resume consists of three files, `resume.json`, `resume.md` and `resume.jpg`. The JSON file is where you edit your data. The markdown file contains metadata and should be left alone (although you could override data with frontmatter). The profile summary needs some basic html formatting (paragraphs). If you are not comfortable with html you can override the JSON with markdown in `resume.md`. Replace `resume.jpg` with your photo (high res, cropped square).
 ```
 /views/resume/resume.json
 /views/resume/resume.md
@@ -77,17 +77,17 @@ You can add custom sections to a project like this:
 "projects": {
   "items": [
     {
-  		"sections": [
-  			{
-  				"title": "Title of section",
-  				"body": "Body of section"
-  			},
-  			{
-  				"title": "Title of section",
-  				"body": "Body of section"
-  			}
+      "sections": [
+        {
+          "title": "Title of section",
+          "body": "Body of section"
+        },
+        {
+          "title": "Title of section",
+          "body": "Body of section"
+        }
       ]  
-	  }
+    }
   ]  
 }
 ```
@@ -98,10 +98,10 @@ You can hide a list or a project by adding `"hidden": "true"`.
 "projects": {
   "items": [
     {
-		"hidden": "true",
-		...
+      "hidden": "true",
+      ...
     }
-	]
+  ]
 }
 ```
 
