@@ -1,0 +1,352 @@
+---js
+{
+  document: {
+    title: "Konsultprofil"
+  },
+  lists: {
+    title: "Kompetenser"
+    skills: {
+      title: "Expertområden"
+    }
+  },
+  projects: {
+    title: "Uppdrag (urval)"
+  },
+  permalink: '/{{ profile.name | slug }}/resume/',
+  title: function() {
+    return this.name;
+  }
+}
+---
+<!doctype html>
+<html class="no-js" lang="{{site.lang}}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{#if page.fileSlug}}{{#if profile.name}}{{profile.name}} - {{/if}}{{site.title}}{{else}}{{site.title}} {{#if title}} — {{title}}{{/if}}{{/if}} - {{dateFormat page.date "YYYY-MM-DD"}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen, print" href="/resume.css">
+  </head>
+  <body class="Page">
+    <table class="Page-wrapper">
+      <thead><tr><td>
+        <div class="Page-header">
+          <header class="Header">
+            <div class="Grid">
+              <div class="Grid-item--start4 Grid-item--span8">
+                <ul>
+                  <li>{{document.title}}</li>
+                  <li>{{profile.email}}</li>
+                  <li>{{profile.phone}}</li>
+                </ul>
+              </div>
+            </div>
+          </header>
+        </div>
+      </td></tr></thead>
+      <tbody><tr><td>
+
+        <main class="Page-main">
+          <div class="Head">
+            <div class="Grid">
+              <div class="Grid-item--start4 Grid-item--span8">
+                <h1>{{profile.name}}</h1>
+                <h2>{{profile.title}}</h2>
+              </div>
+            </div>
+          </div>
+
+          <section class="Profile Section">
+            <div class="Grid">
+              <div class="Grid-item--span4">
+                {{#if profile.picture}}<img class="Image" src="{{profile.picture}}">{{/if}}
+              </div>
+              <div class="Grid-item--span8">
+                {{#if content}}
+                  {{{content}}}
+                {{else if profile.summary}}
+                  {{{profile.summary}}}
+                {{/if}}
+              </div>
+            </div>
+          </section>
+
+          <section class="Lists Section">
+            <header class="Section-header">
+              <div class="Grid">
+                <div class="Grid-item--start4 Grid-item--span8">
+                  <h3>{{lists.title}}</h3>
+                </div>
+              </div>
+            </header>
+
+            {{#if skills}}
+            {{#unless skills.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{skills.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <p>
+                    {{#each skills.items}}{{#if @first}}{{this}}{{else}}, {{this}}{{/if}}{{/each}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if sectors}}
+            {{#unless sectors.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{sectors.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <p>
+                  {{#each sectors.items}}{{#if @first}}{{this}}{{else}}, {{this}}{{/if}}{{/each}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if clients}}
+            {{#unless clients.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{clients.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <p>
+                    {{#each clients.items}}{{#if @first}}{{this}}{{else}}, {{this}}{{/if}}{{/each}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if methods}}
+            {{#unless methods.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{methods.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <p>
+                    {{#each methods.items}}{{#if @first}}{{this}}{{else}}, {{this}}{{/if}}{{/each}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if tools}}
+            {{#unless tools.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{tools.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <ul>
+                  {{#each tools.items}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if programmingLanguages}}
+            {{#unless programmingLanguages.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{programmingLanguages.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <p>
+                    {{#each programmingLanguages.items}}{{#if @first}}{{this}}{{else}}, {{this}}{{/if}}{{/each}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if education}}
+            {{#unless education.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{education.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <ul>
+                  {{#each education.items}}
+                    <li>{{area}}{{#if institution}}, {{institution}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if endDate}} – {{dateFormat endDate "YYYY"}}{{/if}}{{/if}}</li>
+                  {{/each}}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if courses}}
+            {{#unless courses.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{courses.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <ul>
+                  {{#each courses.items}}
+                    <li>{{area}}{{#if institution}}, {{institution}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if endDate}} – {{dateFormat endDate "YYYY"}}{{/if}}{{/if}}</li>
+                  {{/each}}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if employment}}
+            {{#unless employment.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{employment.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <ul>
+                  {{#each employment.items}}
+                    <li>{{company}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if @first}} - pågående{{else}}{{#if endDate}} – {{dateFormat endDate "YYYY"}}{{/if}}{{/if}}</li>
+                  {{/each}}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if languages}}
+            {{#unless languages.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{languages.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <p>
+                  {{#each languages.items}}{{#if @first}}{{language}}{{else}}, {{language}}{{/if}} ({{fluency}}){{/each}}
+                </p>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+          </section>
+
+          {{#if projects}}
+          <section class="Projects Section">
+            <header class="Section-header">
+              <div class="Grid">
+                <div class="Grid-item--start4 Grid-item--span8">
+                  <h3>{{projects.title}}</h3>
+                </div>
+              </div>
+            </header>
+            {{#each projects.items}}
+              {{#unless hidden}}
+              <div class="Project">
+                <div class="Grid">
+                  <div class="Grid-item Grid-item--span4">
+                    <header class="Project-header">
+                      <h4>{{client}}</h4>
+                      <p>{{#if project}}{{project}}, {{/if}}{{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}–{{endDate}}{{/if}}</p>
+                      {{#if types}}
+                      <div><p>{{#each types}}{{#if @first}}{{this}}{{else}}, {{this}}{{/if}}{{/each}}</p></div>
+                      {{/if}}
+                    </header>
+                  </div>
+                  <div class="Grid-item Grid-item--span8">
+                    {{#if roles}}
+                    <div class="Project-section">
+                      <h4>{{roles.title}}</h4>
+                      <p>
+                        {{#each roles}}{{#if @first}}{{this}}{{else}}, {{this}}{{/if}}{{/each}}
+                      </p>
+                    </div>
+                    {{/if}}
+                    {{#if role}}
+                    <div class="Project-section">
+                      <h4>{{@root.projects.sections.role}}</h4><p>{{role}}</p>
+                    </div>
+                    {{/if}}
+                    {{#if description}}
+                    <div class="Project-section">
+                      <h4>{{@root.projects.sections.description}}</h4>
+                      <p>
+                        {{description}}
+                      </p>
+                    </div>
+                    {{/if}}
+                    {{#if method}}
+                    <div class="Project-section">
+                      <h4>{{@root.projects.sections.method}}</h4>
+                      <p>
+                        {{method}}
+                      </p>
+                    </div>
+                    {{/if}}
+                    {{#if result}}
+                    <div class="Project-section">
+                      <h4>{{@root.projects.sections.result}}</h4>
+                      <p>
+                        {{result}}
+                      </p>
+                    </div>
+                    {{/if}}
+                    {{#if sections}}
+                    {{#each sections}}
+                    <div class="Project-section">
+                      {{#if title}}<h4>{{title}}</h4>{{/if}}
+                      {{#if body}}<p>{{body}}</p>{{/if}}
+                    </div>
+                    {{/each}}
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+              {{/unless}}
+            {{/each}}
+          </section>
+          {{/if}}
+        </main>
+
+      </td></tr></tbody>
+      <tfoot><tr><td>
+        <div class="Page-footer">
+          <footer class="Footer">
+            <div class="Grid">
+              <div class="Grid-item--start4 Grid-item--span2">
+                <img src="/images/logo-black.svg" class="Logo">
+              </div>
+            </div>
+          </footer>
+        </div>
+      </td></tr></tfoot>
+    </table>
+  </body>
+</html>

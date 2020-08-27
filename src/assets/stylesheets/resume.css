@@ -1,0 +1,307 @@
+@import 'normalize.css';
+@import 'sanitize.css';
+
+@font-face {
+  font-family: 'Stolzl';
+  src: url("/fonts/Stolzl-Book.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+}
+
+@font-face {
+  font-family: 'Stolzl';
+  src: url("/fonts/Stolzl-Medium.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+}
+
+:root {
+  font-family: 'Stolzl', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+table, tr, td {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----------------------------- *
+   Page layout
+ * ----------------------------- */
+
+ @page {
+   --page-margin-top: 1cm;
+   --page-margin-right: 1.4cm;
+   --page-margin-bottom: 1cm;
+   --page-margin-left: 1.4cm;
+ }
+
+ :root {
+   --page-width: 21cm;
+   --page-margin-top: 1cm;
+   --page-margin-right: 1.4cm;
+   --page-margin-bottom: 1cm;
+   --page-margin-left: 1.4cm;
+   --page-header-height: 3.5cm;
+   --page-footer-height: 3.5cm;
+   --page-column: 0.6cm;
+   --page-gutter: 1cm;
+ }
+
+.Page {
+  position: relative;
+}
+
+/* Header */
+
+.Page-header {
+  height: var(--page-header-height);
+}
+
+.Header-logo {
+  font-family: 'StolzlDisplay', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+  letter-spacing: -.05em;
+  position: relative;
+  top: 0.14em;
+}
+
+/* Footer */
+
+.Page-footer {
+  height: var(--page-footer-height);
+  display: flex;
+}
+
+.Page-footer .Footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ----------------------------- *
+   Typography
+ * ----------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-size: 1em;
+  margin: 0;
+}
+
+h1, h2 {
+  font-family: 'Stolzl', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: -.03em;
+  font-size: 24px;
+  line-height: 1.3;
+  position: relative;
+  /*left: -0.07em; */
+}
+
+h3 {
+  font-family: 'Stolzl', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+
+.Header, .Footer, h4, li, p, small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0;
+}
+
+p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.List li {
+  hyphens: auto;
+}
+
+/* ----------------------------- *
+   Images
+ * ----------------------------- */
+
+.Image {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: .25em;
+}
+
+
+/* ----------------------------- *
+   Layout
+ * ----------------------------- */
+
+/* CSS Grid won't work when avoiding page breaks, soooo old school floats instead */
+
+.Grid {
+  clear: left;
+  display: block;
+}
+
+.Grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.Grid-item--start4 {
+  margin-left: calc( (var(--page-column) * 4) + (var(--page-gutter) * 4) );
+}
+
+.Grid-item--span2 {
+  width: calc( (var(--page-column) * 2) + (var(--page-gutter) * 1) );
+  margin-right: var(--page-gutter);
+  float: left;
+}
+
+.Grid-item--span6 {
+  width: calc( (var(--page-column) * 6) + (var(--page-gutter) * 5) );
+  margin-right: var(--page-gutter);
+  float: left;
+}
+
+.Grid-item--span4 {
+  width: calc( (var(--page-column) * 4) + (var(--page-gutter) * 3) );
+  margin-right: var(--page-gutter);
+  float: left;
+}
+
+.Grid-item--span8 {
+  width: calc( (var(--page-column) * 8) + (var(--page-gutter) * 7) );
+  float: left;
+}
+
+.Grid-item:last-child {
+  margin-right: 0;
+}
+
+.Head {
+  margin-bottom: 2cm;
+}
+
+.Section {
+  margin-bottom: 2cm;
+}
+
+.Section-header {
+  margin-bottom: 1cm;
+}
+
+.List:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.Project-section {
+  margin-bottom: 1em;
+}
+
+.Project:not(:last-child) {
+  margin-bottom: 1cm;
+}
+
+
+/* ----------------------------- *
+   Print
+ * ----------------------------- */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin-top: var(--page-margin-top);
+    margin-right: var(--page-margin-right);
+    margin-bottom: var(--page-margin-bottom);
+    margin-left: var(--page-margin-left);
+    margin-top: 1cm;
+    margin-right: 1.4cm;
+    margin-bottom: 1cm;
+    margin-left: 1.4cm;
+    widows: 3;
+    orphans: 3;
+  }
+
+  /* Don't page break text inside a list, a project header or a project section */
+  .List,
+  .Project-header,
+  .Project-section {
+    page-break-inside: avoid;
+  }
+
+  /* Would be great if orphans and widows would work with headers */
+  .Project-header p,
+  .Project-section p,
+  .Project-section h4 { orphans: 3; widows: 3 }
+
+  /* Would be great if page breaks directly after a heading could be avoided */
+  h4 {
+    page-break-after: avoid;
+  }
+
+  html {
+    font-size: 100%;
+  }
+  .Header,
+  .Footer {
+    width: 100%;
+    position: fixed;
+  }
+  .Header {
+    top: 0cm;
+  }
+  .Footer {
+    bottom: 0cm;
+  }
+}
+
+/* ----------------------------- *
+   Screen
+ * ----------------------------- */
+
+@media screen {
+  html {
+    background-color: #dddddd;
+    padding: 1em;
+    font-size: 100%;
+  }
+  body {
+    width: 21cm;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding-top: var(--page-margin-top);
+    /* Make the floating grid work
+    padding-right: var(--page-margin-right);
+    */
+    padding-bottom: var(--page-margin-bottom);
+    padding-left: var(--page-margin-left);
+  }
+}

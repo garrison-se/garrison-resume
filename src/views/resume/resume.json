@@ -1,0 +1,121 @@
+{
+  "profile": {
+    "name": "Förnamn Efternamn",
+    "title": "Titel",
+    "picture": "/images/resume.jpg",
+    "email": "fornamn.efternamn@garrison.se",
+    "phone": "+46 (0)70 123 45 67",
+    "summary": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Hendrerit dolor magna eget est lorem. Eu lobortis elementum nibh tellus molestie nunc non blandit massa. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Magnis dis parturient montes nascetur ridiculus mus. Ac felis donec et odio pellentesque diam volutpat. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus.</p>"
+  },
+  "properties": {
+    "clients": {
+      "title": "Uppdragsgivare (urval)",
+      "items": [
+        "Item",
+        "Item",
+        "Item"
+      ]
+    },
+    "sectors": {
+      "title": "Branscher",
+      "items": [
+        "Item",
+        "Item",
+        "Item"
+      ]
+    },
+    "skills": {
+      "title": "Expertområden",
+      "items": [
+        "Item",
+        "Item",
+        "Item"
+      ]
+    },
+    "methods": {
+      "title": "Metoder",
+      "items": [
+        "Item",
+        "Item",
+        "Item"
+      ]
+    },
+    "tools": {
+      "title": "Verktyg",
+      "items": [
+        "Item",
+        "Item",
+        "Item"
+      ]
+    },
+    "programmingLanguages": {
+      "title": "Programmeringsspråk",
+      "items": [
+        "Item",
+        "Item",
+        "Item"
+      ]
+    },
+    "employment": {
+      "title": "Anställningar",
+      "items": [
+        {
+          "company": "Garrison Consulting",
+          "position": "Utvecklare",
+          "startDate": "2020-01-01"
+        },
+        {
+          "company": "Företagets namn",
+          "position": "Position",
+          "startDate": "2016-01-01",
+          "endDate": "2020-01-01"
+        }
+      ]
+    },
+    "education": {
+      "title": "Utbildning",
+      "items": [
+        {
+          "area": "Utbildningens namn",
+          "institution": "Utbildarens namn",
+          "startDate": "1996-01-01",
+          "endDate": "1998-01-01"
+        },
+        {
+          "area": "Utbildningens namn",
+          "institution": "Utbildarens namn",
+          "startDate": "1996-01-01",
+          "endDate": "1998-01-01"
+        }
+      ]
+    },
+    "languages": {
+      "title": "Språk",
+      "items": [
+        {
+          "language": "Svenska",
+          "fluency": "modersmål"
+        },
+        {
+          "language": "Engelska",
+          "fluency": "flytande"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "items": [
+      {
+        "client": "Uppdragsgivare",
+        "project": "Projekt",
+        "sector": "Sector",
+        "startDate": "2018",
+        "endDate": "2020",
+        "role": "Utvecklare",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "method": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "result": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      }
+    ]
+  }
+}
