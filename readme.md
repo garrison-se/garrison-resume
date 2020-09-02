@@ -1,7 +1,7 @@
 # Garrison resume generator
 This experimental eleventy thingie generates print ready resumes from JSON. The template features hacks like wrapping the whole page in a table (for the repeating header and footer).
 
-Ideally, you would want the text to break right at the bottom of the page, but not leaving a single line or word on the next page (orphans). Unfortunately, this is not possible the the current browser support for [break-after](https://developer.mozilla.org/en-US/docs/Web/CSS/break-after) and [orphans](https://developer.mozilla.org/en-US/docs/Web/CSS/orphans). Because of this limitation, the rule is to not break pages in the middle of a list or project section. This means there may be gaps at the bottom of pages if there are long sections at inappropriate places. Hopefully print support in CSS will improve in the future!
+Ideally, you would want the text to break right at the bottom of the page, but not leaving a single line or word on the next page (orphans). Unfortunately, this is not possible with the current browser support for [break-after](https://developer.mozilla.org/en-US/docs/Web/CSS/break-after) and [orphans](https://developer.mozilla.org/en-US/docs/Web/CSS/orphans). Because of this limitation, the rule is to not break pages in the middle of a list or project section. This means there may be gaps at the bottom of pages if there are long sections at inappropriate places. Also, it's currently not possible to add page numbers, sorry. Hopefully print support in CSS will improve in the future!
 
 ## Setup
 Install Node if you haven't already. Clone the repo and install dependencies.
@@ -32,7 +32,7 @@ The resume consists of three files, `resume.json`, `resume.md` and `resume.jpg`.
 ## Preview
 The firstname-lastname part of the url is the name set in the profile of the resume. Name is slugified.
 ```
-localhost:4000/firstname-lastname/resume
+localhost:4000/firstname-lastname/resume/
 ```
 
 ## Print or save to PDF
