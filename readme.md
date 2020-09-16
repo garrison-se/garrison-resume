@@ -113,3 +113,14 @@ Project sections are escaped by default. Add `"raw": "true"` if you would like t
   ...
 }
 ```
+
+## Layout config
+
+If your text breaks in unfortunate places you could try to add the following to your JSON. `allowBreaksInside` will allow a page break anywhere in the projects descriptions. `breakBeforeProjects` will force a page break before the projects list.
+
+```
+"config": {
+  "allowBreaksInside": "true",
+  "breakBeforeProjects": "true"
+}
+```

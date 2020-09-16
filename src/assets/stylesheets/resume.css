@@ -257,6 +257,14 @@ ul {
     page-break-inside: avoid;
   }
 
+  /* Config */
+  .allowBreaksInside .Project-section {
+    page-break-inside: auto;
+  }
+  .breakBeforeProjects .Projects {
+    page-break-before: always;
+  }
+
   /* Would be great if orphans and widows would work with headers */
   .Project-header p,
   .Project-section p,

@@ -89,6 +89,40 @@
         }
       ]
     },
+    "courses": {
+      "title": "Kurser",
+      "items": [
+        {
+          "area": "Kursens namn",
+          "institution": "Utbildarens namn",
+          "startDate": "1996-01-01",
+          "endDate": "1998-01-01"
+        },
+        {
+          "area": "Kursens namn",
+          "institution": "Utbildarens namn",
+          "startDate": "1996-01-01",
+          "endDate": "1998-01-01"
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Certifieringar",
+      "items": [
+        {
+          "area": "Certifierings namn",
+          "institution": "Certifierarens namn",
+          "startDate": "1996-01-01",
+          "endDate": "1998-01-01"
+        },
+        {
+          "area": "Certifierings namn",
+          "institution": "Certifierarens namn",
+          "startDate": "1996-01-01",
+          "endDate": "1998-01-01"
+        }
+      ]
+    },
     "languages": {
       "title": "Språk",
       "items": [

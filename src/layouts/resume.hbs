@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" media="screen, print" href="/resume.css">
   </head>
-  <body class="Page">
+  <body class="Page{{#if config.allowBreaksInside}} allowBreaksInside{{/if}}{{#if config.breakBeforeProjects}} breakBeforeProjects{{/if}}">
     <table class="Page-wrapper">
       <thead><tr><td>
         <div class="Page-header">
@@ -190,7 +190,7 @@
                 <div class="Grid-item--span8">
                   <ul>
                   {{#each properties.education.items}}
-                    <li>{{area}}{{#if institution}}, {{institution}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if endDate}} – {{dateFormat endDate "YYYY"}}{{/if}}{{/if}}</li>
+                    <li>{{area}}{{#if institution}}, {{institution}}{{/if}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if endDate}}–{{dateFormat endDate "YYYY"}}{{/if}}</li>
                   {{/each}}
                   </ul>
                 </div>
@@ -209,7 +209,26 @@
                 <div class="Grid-item--span8">
                   <ul>
                   {{#each properties.courses.items}}
-                    <li>{{area}}{{#if institution}}, {{institution}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if endDate}} – {{dateFormat endDate "YYYY"}}{{/if}}{{/if}}</li>
+                    <li>{{area}}{{#if institution}}, {{institution}}{{/if}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if endDate}}–{{dateFormat endDate "YYYY"}}{{/if}}</li>
+                  {{/each}}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {{/unless}}
+            {{/if}}
+
+            {{#if properties.certifications}}
+            {{#unless properties.certifications.hidden}}
+            <div class="List">
+              <div class="Grid">
+                <div class="Grid-item--span4">
+                  <h4>{{properties.certifications.title}}</h4>
+                </div>
+                <div class="Grid-item--span8">
+                  <ul>
+                  {{#each properties.certifications.items}}
+                    <li>{{area}}{{#if institution}}, {{institution}}{{/if}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if endDate}}–{{dateFormat endDate "YYYY"}}{{/if}}</li>
                   {{/each}}
                   </ul>
                 </div>
@@ -228,7 +247,7 @@
                 <div class="Grid-item--span8">
                   <ul>
                   {{#each properties.employment.items}}
-                    <li>{{company}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if @first}} - pågående{{else}}{{#if endDate}} – {{dateFormat endDate "YYYY"}}{{/if}}{{/if}}</li>
+                    <li>{{company}}{{#if startDate}}, {{dateFormat startDate "YYYY"}}{{/if}}{{#if @first}}-pågående{{else}}{{#if endDate}}–{{dateFormat endDate "YYYY"}}{{/if}}{{/if}}</li>
                   {{/each}}
                   </ul>
                 </div>
