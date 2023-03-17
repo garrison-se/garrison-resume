@@ -252,6 +252,7 @@ ul {
 
   /* Don't page break text inside a list, a project header or a project section */
   .List,
+  .Project,
   .Project-header,
   .Project-section {
     page-break-inside: avoid;
